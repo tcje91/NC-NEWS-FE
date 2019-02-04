@@ -1,32 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|La+Belle+Aurore');
+
 .App {
+  display: grid;
+  grid-template: 5em 1fr / 1fr;
+  font-family: 'Lato', sans-serif;
+  /* margin: 0;
+  padding: 0; */
+}
+
+.right {
+  text-align: right;
+}
+
+.mainHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.NavBar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 50%;
+}
+
+.NavItem {
+  text-align: center;
+  padding: 1.5em 0.3em;
+  margin: 0;
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgb(219, 69, 69);
+  transition: 200ms;
+}
+
+.PageTitle {
+  font-size: 1.5em;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.fancyFont {
+  font-family: 'La Belle Aurore';
+  color: rgb(219, 69, 69);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+  padding: 0;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.DisplayContainer {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+  font-weight: normal;
+}
+
+p {
+  font-size: 0.7em;
+  margin: 0.1em;
+}
+
+.ArticleSummaryItem {
+  margin: 1em;
+  padding: 0.3em;
+  background-color: rgb(240, 240, 240);
+}
+
+.SpaceCapsTitle {
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+  margin: 0.5em 0;
+  display: block;
 }
