@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from './NavBar';
 import PageTitle from './PageTitle';
 import UserInfo from './UserInfo';
+import "./Header.css"
 
 const Header = () => {
   return (

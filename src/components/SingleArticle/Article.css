@@ -1,0 +1,14 @@
+.ArticlePostInfo {
+  text-align: right;
+}
+
+.BodyText {
+  font-family: "Merriweather", serif;
+}
+
+.ArticleContainer {
+  display: grid;
+  grid-template: 1fr / 1fr 3fr;
+  width: 80%;
+  margin: auto;
+}

@@ -1,0 +1,12 @@
+.DisplayContainer {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  width: 80%;
+  margin: auto;
+}
+
+.ArticleSummaryItem {
+  margin: 1em;
+  padding: 0.5em;
+  background-color: rgb(240, 240, 240);
+}

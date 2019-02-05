@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { getArticles, getTopArticles } from "../utils";
+import { getArticles, getTopArticles } from "../../utils";
 import ArtSumDisplay from "./ArtSumDisplay";
+import "./Home.css"
 
 export default class Home extends Component {
   state = {

@@ -1,34 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|La+Belle+Aurore');
+@import url("https://fonts.googleapis.com/css?family=Lato|La+Belle+Aurore|Merriweather");
 
 .App {
   display: grid;
   grid-template: 5em 1fr / 1fr;
-  font-family: 'Lato', sans-serif;
-  /* margin: 0;
-  padding: 0; */
+  font-family: "Lato", sans-serif;
 }
 
 .right {
   text-align: right;
-}
-
-.mainHeader {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.NavBar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 50%;
-}
-
-.NavItem {
-  text-align: center;
-  padding: 1.5em 0.3em;
-  margin: 0;
-  font-size: 0.7em;
-  letter-spacing: 0.3em;
 }
 
 a {
@@ -41,24 +20,9 @@ a:hover {
   transition: 200ms;
 }
 
-.PageTitle {
-  font-size: 1.5em;
-  text-align: center;
-}
-
-.fancyFont {
-  font-family: 'La Belle Aurore';
-  color: rgb(219, 69, 69);
-}
-
 h1 {
   padding: 0;
   margin: 0;
-}
-
-.DisplayContainer {
-  display: grid;
-  grid-template: 1fr / 1fr 1fr;
 }
 
 h3 {
@@ -72,9 +36,9 @@ p {
   margin: 0.1em;
 }
 
-.ArticleSummaryItem {
+.ArticleBody {
   margin: 1em;
-  padding: 0.3em;
+  padding: 0.5em;
   background-color: rgb(240, 240, 240);
 }
 

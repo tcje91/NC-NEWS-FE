@@ -1,0 +1,28 @@
+.mainHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.NavBar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 50%;
+}
+
+.PageTitle {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.fancyFont {
+  font-family: "La Belle Aurore";
+  color: rgb(219, 69, 69);
+}
+
+.NavItem {
+  text-align: center;
+  padding: 1.5em 0.3em;
+  margin: 0;
+  font-size: 0.7em;
+  letter-spacing: 0.3em;
+}
