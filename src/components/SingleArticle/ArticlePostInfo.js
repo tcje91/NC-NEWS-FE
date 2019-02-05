@@ -7,6 +7,7 @@ export default class ArticlePostInfo extends Component {
     const date = article.created_at ? formatTimestamp(article.created_at) : "";
     return (
       <div className="ArticlePostInfo">
+        <img className="userPicLarge" src="/default-user.png" alt="userImg" />
         <p>Posted by: {article.author}</p>
         <p>{date.date}</p>
         <p>{date.time}</p>

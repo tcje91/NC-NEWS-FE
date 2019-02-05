@@ -1,7 +1,7 @@
 .DisplayContainer {
   display: grid;
   grid-template: 1fr / 1fr 1fr;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -9,4 +9,9 @@
   margin: 1em;
   padding: 0.5em;
   background-color: rgb(240, 240, 240);
+}
+
+.HomeContainer {
+    width: 80%;
+    margin: auto;
 }

@@ -1,9 +1,12 @@
 .ArticlePostInfo {
   text-align: right;
+  padding: 0.5em;
+  margin: 1em;
 }
 
 .BodyText {
   font-family: "Merriweather", serif;
+  line-height: 1.6;
 }
 
 .ArticleContainer {
@@ -11,4 +14,8 @@
   grid-template: 1fr / 1fr 3fr;
   width: 80%;
   margin: auto;
+}
+
+.userPicLarge {
+  width: 80%;
 }

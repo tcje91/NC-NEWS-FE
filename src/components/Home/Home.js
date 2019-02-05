@@ -11,7 +11,8 @@ export default class Home extends Component {
   render() {
     const { recentArticles, topArticles } = this.state;
     return (
-      <div>
+      <div className="HomeContainer">
+        <h1>HOME</h1>
         <div className="DisplayContainer">
           <ArtSumDisplay label="RECENT ARTICLES" articles={recentArticles} />
           <ArtSumDisplay label="TOP ARTICLES" articles={topArticles} />
