@@ -2,20 +2,65 @@
   text-align: right;
   padding: 0.5em;
   margin: 1em;
+  grid-area: postInfo;
 }
 
 .BodyText {
   font-family: "Merriweather", serif;
   line-height: 1.6;
+  grid-area: body;
+}
+
+.CommentsButton {
+  grid-area: button;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-self: center;
+  width: 30%;
+  height: 60%;
+}
+.CommentsContainer {
+  grid-area: commentsCont;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .ArticleContainer {
   display: grid;
-  grid-template: 1fr / 1fr 3fr;
+  grid-template: 1fr 2em / 1fr 3fr;
   width: 80%;
   margin: auto;
+  grid-template-areas:
+    "postInfo body"
+    "button button"
+    "commentsCont commentsCont";
+}
+
+.CommentItem {
+  margin: 1em;
+  padding: 0.5em;
+  background-color: rgb(240, 240, 240);
 }
 
 .userPicLarge {
   width: 80%;
+}
+
+.CommentBody {
+  font-family: "Merriweather", serif;
+  line-height: 1.6;
+}
+
+.reduceMarginBot {
+  margin-bottom: 0.2em;
+}
+
+.inlineButton {
+  background-color: white;
+}
+
+.inlineButton:disabled:hover {
+  background-color: white;
 }

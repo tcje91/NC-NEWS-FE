@@ -20,7 +20,7 @@ class App extends Component {
         <Router>
           <Home path="/" currentUser={currentUser}/>
           <Articles path="/articles" />
-          <ArticleContainer path="/articles/:article_id" />
+          <ArticleContainer currentUser={currentUser} path="/articles/:article_id" />
           <UsersContainer path="/users" />
         </Router>
       </div>
