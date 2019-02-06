@@ -14,7 +14,6 @@ export default class ArticleContainer extends Component {
   render() {
     const { article, commentsVisible } = this.state;
     const { article_id, currentUser } = this.props;
-    console.log(article);
     return (
       <div className="ArticleContainer">
         <ArticlePostInfo currentUser={currentUser} article={article} />

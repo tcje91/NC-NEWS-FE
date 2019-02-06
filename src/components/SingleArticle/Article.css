@@ -22,7 +22,7 @@
 }
 
 .AddButton {
-  grid-area: ShowButton;
+  grid-area: AddButton;
   display: flex;
   justify-self: center;
   justify-content: center;
@@ -40,7 +40,7 @@
 
 .ArticleContainer {
   display: grid;
-  grid-template: 1fr 2em / 1fr 3fr;
+  grid-template: 1fr 2em 2em / 1fr 3fr;
   width: 80%;
   margin: auto;
   grid-template-areas:
@@ -75,4 +75,8 @@
 
 .inlineButton:disabled:hover {
   background-color: white;
+}
+
+.CommentAdder {
+  text-align: center;
 }

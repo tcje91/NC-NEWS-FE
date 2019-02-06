@@ -70,6 +70,14 @@ export const getTopics = () => {
   return axios.get(`${BASE_URL}/topics`).then(({ data: { topics }}) => topics);
 }
 
+export const postCommentToArticle = (comment, article) => {
+  return axios({
+    method: "post",
+    url: `${BASE_URL}/articles/${article}/comments`,
+    data: comment
+  }).then(({ data: { comment }}) => comment)
+}
+
 export const formatTimestamp = timestamp => {
   const [date, time] = timestamp.slice(0, -5).split("T");
   const [year, month, day] = date.split("-");
