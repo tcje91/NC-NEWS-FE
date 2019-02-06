@@ -1,17 +1,18 @@
-import React from 'react'
-import NavBar from './NavBar';
-import PageTitle from './PageTitle';
-import UserInfo from './UserInfo';
-import "./Header.css"
+import React from "react";
+import NavBar from "./NavBar";
+import PageTitle from "./PageTitle";
+import UserLogin from "./UserLogin";
+import "./Header.css";
+import UserLoggedIn from "./UserLoggedIn";
 
-const Header = () => {
+const Header = ({ setUser, currentUser, logOut }) => {
   return (
     <div className="mainHeader">
       <NavBar />
       <PageTitle />
-      <UserInfo />
+      {currentUser ?<UserLoggedIn user={currentUser} logOut={logOut}/> : <UserLogin setUser={setUser} />}
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

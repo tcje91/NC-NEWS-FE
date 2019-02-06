@@ -31,6 +31,40 @@ h3 {
   font-weight: normal;
 }
 
+h4 {
+  font-family: "Merriweather";
+  font-weight: normal;
+}
+
+input {
+  font-family: "Lato", sans-serif;
+  font-size: 60%;
+  padding: 0.2em 1em;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background-color: rgb(240, 240, 240);
+	color: inherit;
+  border: none;
+  border-radius: 3px;
+  padding: 0.2em 1em;
+  margin: 0.2em;
+	font: inherit;
+	cursor: pointer;
+  outline: inherit;
+  font-family: "Lato", sans-serif;
+  font-size: 60%;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+button:hover {
+  background-color: rgb(219, 69, 69);
+  color: white;
+  transition: all 200ms;
+  border-color: white;
+}
+
 p {
   font-size: 0.7em;
   margin: 0.1em;
@@ -47,4 +81,8 @@ p {
   letter-spacing: 0.3em;
   margin: 0.5em 0;
   display: block;
+}
+
+.warning {
+  color: rgb(219, 69, 69);
 }

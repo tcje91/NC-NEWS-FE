@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { formatTimestamp } from "../../utils";
+import { formatTimestamp } from "../../utils/API";
 
 export default class ArticlePostInfo extends Component {
   render() {

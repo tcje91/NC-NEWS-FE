@@ -9,21 +9,30 @@ import UsersContainer from "./components/Users/UsersContainer";
 
 class App extends Component {
   state = {
-    currentUser: ""
+    currentUser: null
   };
 
   render() {
+    const { currentUser } = this.state;
     return (
       <div className="App">
-        <Header />
+        <Header currentUser={currentUser} logOut={this.logOut} setUser={this.setUser} />
         <Router>
-          <Home path="/" />
+          <Home path="/" currentUser={currentUser}/>
           <Articles path="/articles" />
           <ArticleContainer path="/articles/:article_id" />
           <UsersContainer path="/users" />
         </Router>
       </div>
     );
+  }
+
+  setUser = user => {
+    this.setState({ currentUser: user });
+  };
+
+  logOut = () => {
+    this.setState({ currentUser: null })
   }
 }
 

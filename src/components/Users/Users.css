@@ -1,6 +1,7 @@
 .UsersContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .UsersPage {
@@ -9,5 +10,11 @@
 }
 
 .UserCard {
+  width: 10em;
   margin: 2em;
+  text-align: center;
+}
+
+.UserImgSml {
+  width: 80%;
 }

@@ -26,3 +26,21 @@
   font-size: 0.7em;
   letter-spacing: 0.3em;
 }
+
+.imgMini {
+  height: 3em;
+  justify-self: center;
+}
+
+.grid1x2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.LoggedIn {
+  width: 50%;
+  justify-self: end;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}

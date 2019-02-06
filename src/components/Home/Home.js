@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { getArticles, getTopArticles } from "../../utils";
+import { getArticles, getTopArticles } from "../../utils/API";
 import ArtSumDisplay from "./ArtSumDisplay";
-import "./Home.css"
+import "./Home.css";
+import Welcome from "./Welcome";
 
 export default class Home extends Component {
   state = {
@@ -10,8 +11,10 @@ export default class Home extends Component {
   };
   render() {
     const { recentArticles, topArticles } = this.state;
+    const { currentUser } = this.props;
     return (
       <div className="HomeContainer">
+        <Welcome currentUser={currentUser} />
         <h1>HOME</h1>
         <div className="DisplayContainer">
           <ArtSumDisplay label="RECENT ARTICLES" articles={recentArticles} />
@@ -22,11 +25,11 @@ export default class Home extends Component {
   }
 
   async componentDidMount() {
-    const recentArticlesAll = await getArticles();
-    const recentArticles = recentArticlesAll.slice(0, 3);
-    const topArticlesAll = await getTopArticles();
-    const topArticles = topArticlesAll.slice(0, 3);
-    this.setState({ recentArticles, topArticles });
-    console.log(recentArticles);
+    getArticles().then(articles => {
+      this.setState({ recentArticles: articles.slice(0, 3) });
+    });
+    getTopArticles().then(articles => {
+      this.setState({ topArticles: articles.slice(0, 3) });
+    });
   }
 }

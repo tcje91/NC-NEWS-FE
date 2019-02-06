@@ -1,5 +1,5 @@
 import React from 'react'
-import { formatTimestamp } from '../../utils'
+import { formatTimestamp } from '../../utils/API'
 import { Link } from '@reach/router';
 
 const ArticleSummary = ({ title, author, votes, created_at, id, topic }) => {

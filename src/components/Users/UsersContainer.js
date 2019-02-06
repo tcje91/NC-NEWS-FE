@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Users.css";
 import User from "./User";
-import Axios from "axios";
+import { getUsers } from "../../utils/API";
 
 export default class UsersContainer extends Component {
   state = {
@@ -24,10 +24,8 @@ export default class UsersContainer extends Component {
   }
 
   componentDidMount() {
-    Axios.get("https://nc-news-tcje.herokuapp.com/api/users").then(
-      ({ data: { users } }) => {
-        this.setState({ users });
-      }
-    );
+    getUsers().then(users => {
+      this.setState({ users });
+    });
   }
 }
