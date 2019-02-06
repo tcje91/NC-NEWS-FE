@@ -46,15 +46,28 @@ export const voteOnArticle = (voteChange, article_id) => {
     method: "patch",
     url: `${BASE_URL}/articles/${article_id}`,
     data: { inc_votes: voteChange }
-  }).then(console.log)
-}
+  }).then(console.log);
+};
 
 export const voteOnComment = (voteChange, article_id, comment_id) => {
   return axios({
     method: "patch",
     url: `${BASE_URL}/articles/${article_id}/comments/${comment_id}`,
     data: { inc_votes: voteChange }
-  }).then(console.log)
+  }).then(console.log);
+};
+
+export const postArticleToTopic = (body, topic) => {
+  console.log(body);
+  return axios({
+    method: "post",
+    url: `${BASE_URL}/topics/${topic}/articles`,
+    data: body
+  }).then(({ data: { article } }) => article);
+};
+
+export const getTopics = () => {
+  return axios.get(`${BASE_URL}/topics`).then(({ data: { topics }}) => topics);
 }
 
 export const formatTimestamp = timestamp => {

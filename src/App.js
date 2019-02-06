@@ -19,7 +19,7 @@ class App extends Component {
         <Header currentUser={currentUser} logOut={this.logOut} setUser={this.setUser} />
         <Router>
           <Home path="/" currentUser={currentUser}/>
-          <Articles path="/articles" />
+          <Articles currentUser={currentUser} path="/articles" />
           <ArticleContainer currentUser={currentUser} path="/articles/:article_id" />
           <UsersContainer path="/users" />
         </Router>

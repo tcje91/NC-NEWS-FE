@@ -12,7 +12,7 @@
 }
 
 .CommentsButton {
-  grid-area: button;
+  grid-area: ShowButton;
   display: flex;
   justify-self: center;
   justify-content: center;
@@ -20,6 +20,17 @@
   width: 30%;
   height: 60%;
 }
+
+.AddButton {
+  grid-area: ShowButton;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-self: center;
+  width: 30%;
+  height: 60%;
+}
+
 .CommentsContainer {
   grid-area: commentsCont;
   display: flex;
@@ -34,7 +45,8 @@
   margin: auto;
   grid-template-areas:
     "postInfo body"
-    "button button"
+    "ShowButton ShowButton"
+    "AddButton AddButton"
     "commentsCont commentsCont";
 }
 

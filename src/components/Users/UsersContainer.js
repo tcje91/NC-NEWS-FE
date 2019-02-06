@@ -16,7 +16,7 @@ export default class UsersContainer extends Component {
         <div className="UsersContainer">
           <br />
           {users.map(user => {
-            return <User user={user} />;
+            return <User user={user} key={user.username} />;
           })}
         </div>
       </div>
