@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { formatTimestamp, voteOnComment } from "../../utils/API";
+import { formatTimestamp, voteOnComment, deleteComment } from "../../utils/API";
 
 export default class Comment extends Component {
   state = {
@@ -15,22 +15,29 @@ export default class Comment extends Component {
         <p>{timeStamp.date}</p>
         <p>{timeStamp.time}</p>
         <p>Votes: {comment.votes + voteChange}</p>
-        { currentUser && <>
-        <button
-          disabled={voteChange === -1}
-          onClick={() => this.handleCommentVoteClick(-1)}
-          className="inlineButton"
-        >
-          -VOTE
-        </button>
-        <button
-          disabled={voteChange === 1}
-          onClick={() => this.handleCommentVoteClick(1)}
-          className="inlineButton"
-        >
-          +VOTE
-        </button>
-        </>}
+        {currentUser && currentUser.username !== comment.author && (
+          <>
+            <button
+              disabled={voteChange === -1}
+              onClick={() => this.handleCommentVoteClick(-1)}
+              className="inlineButton"
+            >
+              -VOTE
+            </button>
+            <button
+              disabled={voteChange === 1}
+              onClick={() => this.handleCommentVoteClick(1)}
+              className="inlineButton"
+            >
+              +VOTE
+            </button>
+          </>
+        )}
+        {currentUser && currentUser.username === comment.author && (
+          <button className="inlineButton" onClick={this.handleCommentDelete}>
+            DELETE COMMENT
+          </button>
+        )}
         <br />
         <p className="CommentBody">{comment.body}</p>
       </div>
@@ -43,9 +50,17 @@ export default class Comment extends Component {
     } = this.props;
     voteOnComment(voteChange, article_id, comment_id);
     this.setState(prevState => {
-        return {
-          voteChange: prevState.voteChange + voteChange
-        };
-      });
+      return {
+        voteChange: prevState.voteChange + voteChange
+      };
+    });
+  };
+
+  handleCommentDelete = () => {
+    const { renderRemainingComments } = this.props;
+    const {
+      comment: { article_id, comment_id }
+    } = this.props;
+    deleteComment(article_id, comment_id).then(() => renderRemainingComments(comment_id))
   };
 }

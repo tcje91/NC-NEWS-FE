@@ -54,8 +54,9 @@ textarea {
   font-size: 60%;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  padding: 0.2em 1em;
+  padding: 0.2em 0.4em;
   margin: 0.2em;
+  margin-right: 1em;
 }
 
 button, input[type="submit"], input[type="reset"] {

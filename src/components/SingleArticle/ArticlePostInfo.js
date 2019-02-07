@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { formatTimestamp, voteOnArticle } from "../../utils/API";
+import { formatTimestamp, voteOnArticle, deleteArticleById } from "../../utils/API";
+import { navigate } from '@reach/router';
 
 export default class ArticlePostInfo extends Component {
   state = {
@@ -16,20 +17,25 @@ export default class ArticlePostInfo extends Component {
         <p>{date.date}</p>
         <p>{date.time}</p>
         <p>Votes: {article.votes + voteChange}</p>
-        {currentUser && <>
-        <button
-          disabled={voteChange === -1}
-          onClick={() => this.handleArticleVoteClick(-1)}
-        >
-          -VOTE
-        </button>
-        <button
-          disabled={voteChange === 1}
-          onClick={() => this.handleArticleVoteClick(1)}
-        >
-          +VOTE
-        </button>
-        </>}
+        {currentUser && currentUser.username !== article.author && (
+          <>
+            <button
+              disabled={voteChange === -1}
+              onClick={() => this.handleArticleVoteClick(-1)}
+            >
+              -VOTE
+            </button>
+            <button
+              disabled={voteChange === 1}
+              onClick={() => this.handleArticleVoteClick(1)}
+            >
+              +VOTE
+            </button>
+          </>
+        )}
+        {currentUser && currentUser.username === article.author && (
+          <button onClick={this.handleArticleDelete}>DELETE ARTICLE</button>
+        )}
       </div>
     );
   }
@@ -43,4 +49,12 @@ export default class ArticlePostInfo extends Component {
       };
     });
   };
+  
+  handleArticleDelete = () => {
+    const {article: { article_id }} = this.props;
+    console.log(article_id)
+    deleteArticleById(article_id).then(() => {
+      navigate('/articles');
+    });
+  }
 }

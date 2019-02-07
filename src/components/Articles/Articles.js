@@ -3,6 +3,7 @@ import ArtSumDisplay from "../Home/ArtSumDisplay";
 import "./Articles.css";
 import { getArticles } from "../../utils/API";
 import ArticleAdder from "./ArticleAdder";
+import SortBar from "./SortBar";
 
 export default class Articles extends Component {
   state = {
@@ -15,7 +16,7 @@ export default class Articles extends Component {
     return (
       <div className="ArticlesContainer">
         <h1>ARTICLES</h1>
-        {currentUser && <button onClick={this.toggleAddArticle}>SUBMIT AN ARTICLE</button>}
+        {currentUser && <button className="AddButton SubmitButton" onClick={this.toggleAddArticle}>{ addArticle ? "CANCEL" : "SUBMIT NEW ARTICLE"}</button>}
         {addArticle && currentUser && (
           <ArticleAdder
             currentUser={currentUser}
@@ -23,6 +24,7 @@ export default class Articles extends Component {
             renderNewArticle={this.renderNewArticle}
           />
         )}
+        <SortBar setSortedArticles={this.setSortedArticles}/>
         <ArtSumDisplay label="ARTICLES" articles={articles} />
       </div>
     );
@@ -41,5 +43,9 @@ export default class Articles extends Component {
   renderNewArticle = (article) => {
     console.log(article, "RENDERING ARTICLE")
     this.setState(prevState => ({ articles: [article, ...prevState.articles]}))
+  }
+
+  setSortedArticles = articles => {
+    this.setState({ articles })
   }
 }

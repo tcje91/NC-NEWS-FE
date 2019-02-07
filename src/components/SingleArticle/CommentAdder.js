@@ -34,6 +34,7 @@ export default class CommentAdder extends Component {
     const comment = { username: currentUser.username, body: commentInput };
     postCommentToArticle(comment, article_id)
       .then(comment => {
+        console.log(comment)
         renderNewComment(comment);
       })
       .catch(console.log, "ERROR!");

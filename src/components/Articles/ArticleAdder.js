@@ -14,11 +14,11 @@ export default class ArticleAdder extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <select onChange={this.handleTopicInput} className="customSelect">
-            <option value="" disabled selected>
+            <option disabled defaultValue>
               Topic
             </option>
             {topics.map(topic => {
-              return <option value={topic.slug}>{topic.slug}</option>;
+              return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>;
             })}
           </select>
           <br />

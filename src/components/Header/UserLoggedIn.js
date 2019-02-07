@@ -12,7 +12,7 @@ const UserLoggedIn = ({ user, logOut }) => {
         </div>
         <img className="imgMini" src="/default-user.png" alt="userImg" />
       </div>
-      <button className="JustifyRight" onClick={logOut}>Log out</button>
+      <button className="SubmitButton" onClick={logOut}>Log out</button>
     </div>
   );
 };

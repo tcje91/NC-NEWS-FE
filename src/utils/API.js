@@ -9,6 +9,15 @@ export const getArticles = () => {
     .catch(console.log);
 };
 
+export const getSortedArticles = (sort_by, order, limit) => {
+  return axios
+    .get(
+      `${BASE_URL}/articles?sort_by=${sort_by}&order=${order}&limit=${limit}`
+    )
+    .then(({ data: { articles } }) => articles)
+    .catch(console.log);
+};
+
 export const getTopArticles = () => {
   return axios
     .get(`${BASE_URL}/articles?sort_by=votes&order=desc`)
@@ -57,6 +66,12 @@ export const voteOnComment = (voteChange, article_id, comment_id) => {
   }).then(console.log);
 };
 
+export const deleteComment = (article_id, comment_id) => {
+  return axios
+    .delete(`${BASE_URL}/articles/${article_id}/comments/${comment_id}`)
+    .catch(console.log);
+};
+
 export const postArticleToTopic = (body, topic) => {
   console.log(body);
   return axios({
@@ -66,17 +81,24 @@ export const postArticleToTopic = (body, topic) => {
   }).then(({ data: { article } }) => article);
 };
 
+export const deleteArticleById = article_id => {
+  return axios.delete(`${BASE_URL}/articles/${article_id}`).catch(console.log);
+};
+
 export const getTopics = () => {
-  return axios.get(`${BASE_URL}/topics`).then(({ data: { topics }}) => topics);
-}
+  return axios.get(`${BASE_URL}/topics`).then(({ data: { topics } }) => topics);
+};
 
 export const postCommentToArticle = (comment, article) => {
   return axios({
     method: "post",
     url: `${BASE_URL}/articles/${article}/comments`,
     data: comment
-  }).then(({ data: { comment }}) => comment)
-}
+  }).then(({ data: { comment } }) => ({
+    ...comment,
+    author: comment.username
+  }));
+};
 
 export const formatTimestamp = timestamp => {
   const [date, time] = timestamp.slice(0, -5).split("T");

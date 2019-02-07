@@ -28,6 +28,7 @@ export default class Comments extends Component {
               currentUser={currentUser}
               key={comment.comment_id}
               comment={comment}
+              renderRemainingComments={this.renderRemainingComments}
             />
           ))}
         </div>
@@ -41,5 +42,11 @@ export default class Comments extends Component {
 
   renderNewComment = comment => {
       this.setState(prevState => ({ comments: [comment, ...prevState.comments]}))
+  }
+
+  renderRemainingComments = deletedComment_id => {
+    const { comments } = this.state;
+    const remainingComments = comments.filter(comment => comment.comment_id !== deletedComment_id)
+    this.setState({ comments: remainingComments })
   }
 }
