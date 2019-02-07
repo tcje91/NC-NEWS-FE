@@ -13,7 +13,7 @@ export default class ArticleAdder extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <select onChange={this.handleTopicInput} className="customSelect">
+          <label>TOPIC:</label><select onChange={this.handleTopicInput} className="customSelect">
             <option disabled defaultValue>
               Topic
             </option>
@@ -21,6 +21,7 @@ export default class ArticleAdder extends Component {
               return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>;
             })}
           </select>
+          
           <br />
           <input
             onChange={this.handleTitleInput}
@@ -28,6 +29,7 @@ export default class ArticleAdder extends Component {
             placeholder="Title"
             value={titleInput}
             required
+            className="TitleInput"
           />
           <br />
           <textarea

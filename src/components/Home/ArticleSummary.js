@@ -8,9 +8,9 @@ const ArticleSummary = ({ title, author, votes, created_at, id, topic, comment_c
       <Link className="SpaceCapsTitle" to={`/articles/${id}`}>{title.toUpperCase()}</Link>
       <p>Posted by {author}</p>
       <p>{formatTimestamp(created_at).date}</p>
-      <p>Topic: {topic}</p>
+      {/* <p>Topic: {topic}</p> */}
       <p>Votes: {votes}</p>
-      <p>{comment_count} comments</p>
+      <p>{comment_count} comments<span className="fancyTopic fancyFont">{topic}</span></p>
     </div>
   )
 }

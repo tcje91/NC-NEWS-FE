@@ -4,10 +4,22 @@
   display: grid;
   grid-template: 5em 1fr / 1fr;
   font-family: "Lato", sans-serif;
+  margin: 1em;
+  overflow: hidden;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 .right {
   text-align: right;
+}
+
+
+.fancyFont {
+  font-family: "La Belle Aurore";
+  color: rgb(219, 69, 69);
 }
 
 a {
@@ -59,15 +71,17 @@ textarea {
   margin-right: 1em;
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background-color: rgb(240, 240, 240);
-	color: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+  background-color: rgb(240, 240, 240);
+  color: inherit;
   border: none;
   border-radius: 3px;
   padding: 0.2em 1em;
   margin: 0.2em;
-	font: inherit;
-	cursor: pointer;
+  font: inherit;
+  cursor: pointer;
   outline: inherit;
   font-family: "Lato", sans-serif;
   font-size: 60%;
