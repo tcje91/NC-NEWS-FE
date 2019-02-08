@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import Articles from "./components/Articles/Articles";
 import ArticleContainer from "./components/SingleArticle/ArticleContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import NotFound from "./components/Errors/NotFound";
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
           <Articles currentUser={currentUser} path="/articles" />
           <ArticleContainer currentUser={currentUser} path="/articles/:article_id" />
           <UsersContainer path="/users" />
+          <NotFound default/>
         </Router>
       </div>
     );

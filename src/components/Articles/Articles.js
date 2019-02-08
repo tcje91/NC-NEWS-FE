@@ -16,7 +16,7 @@ export default class Articles extends Component {
     return (
       <div className="ArticlesContainer">
         <h1>ARTICLES</h1>
-        {currentUser && <button className="AddButton SubmitButton" onClick={this.toggleAddArticle}>{ addArticle ? "CANCEL" : "SUBMIT NEW ARTICLE"}</button>}
+        {currentUser && <button className="AddButton SubmitButton" id="addArticleButton" onClick={this.toggleAddArticle}>{ addArticle ? "CANCEL" : "SUBMIT NEW ARTICLE"}</button>}
         {addArticle && currentUser && (
           <ArticleAdder
             currentUser={currentUser}

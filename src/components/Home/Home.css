@@ -12,18 +12,37 @@
 }
 
 .HomeContainer {
-    width: 80%;
+  width: 80%;
     margin: auto;
-}
-
-.WelcomeMessage {
-  text-align: center;
-}
-
+  }
+  
+  .WelcomeMessage {
+    text-align: center;
+  }
+  
 .fancyTopic {
   float: right;
   color: rgb(219, 69, 69);
   font-size: 300%;
   position: relative;
   top: -20px;
+}
+
+@media screen and (max-width: 600px) {
+  .DisplayContainer {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+  }
+
+  .fancyTopic {
+    float: right;
+    color: rgb(219, 69, 69);
+    font-size: 200%;
+    position: relative;
+    top: -5px;
+  }
+
+  .recentArts {
+    grid-row: 1
+  }
 }

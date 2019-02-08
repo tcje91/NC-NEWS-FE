@@ -17,8 +17,8 @@ export default class Home extends Component {
         <Welcome currentUser={currentUser} />
         <h1>HOME</h1>
         <div className="DisplayContainer">
-          <ArtSumDisplay label="RECENT ARTICLES" articles={recentArticles} />
-          <ArtSumDisplay label="TOP ARTICLES" articles={topArticles} />
+          <ArtSumDisplay label="RECENT ARTICLES" articles={recentArticles} className="recentArts" />
+          <ArtSumDisplay label="TOP ARTICLES" articles={topArticles} className="topArts"/>
         </div>
       </div>
     );

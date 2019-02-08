@@ -1,27 +1,58 @@
 import React, { Component } from "react";
-import { postArticleToTopic, getTopics } from "../../utils/API";
+import { postArticleToTopic, getTopics, addTopic } from "../../utils/API";
+import TopicAdder from "./TopicAdder";
 
 export default class ArticleAdder extends Component {
   state = {
     topics: [],
     titleInput: "",
-    topicInput: "",
-    bodyInput: ""
+    topicInput: "coding",
+    bodyInput: "",
+    newTopicTitle: "",
+    newTopicDesc: ""
   };
   render() {
-    const { titleInput, bodyInput, topics } = this.state;
+    const { titleInput, bodyInput, topics, topicInput } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>TOPIC:</label><select onChange={this.handleTopicInput} className="customSelect">
-            <option disabled defaultValue>
+          <label>TOPIC:</label>
+          <select
+            value={this.state.topicInput}
+            onChange={this.handleTopicInput}
+            className="customSelect"
+          >
+            <option value="default" disabled>
               Topic
             </option>
             {topics.map(topic => {
-              return <option key={topic.slug} value={topic.slug}>{topic.slug}</option>;
+              return (
+                <option key={topic.slug} value={topic.slug}>
+                  {topic.slug}
+                </option>
+              );
             })}
+            <option key="newTopic" value="newTopic" className="red">
+              Add New Topic
+            </option>
           </select>
-          
+          <br />
+          {topicInput === "newTopic" && (
+            <div>
+              <label>NEW TOPIC:</label>
+              <input
+                onChange={this.handleTopicTitleInput}
+                placeholder="Topic title"
+                required
+              />
+              <input
+                onChange={this.handleTopicDescInput}
+                className="DescInput"
+                placeholder="Topic description"
+                required
+              />
+            </div>
+          )}
           <br />
           <input
             onChange={this.handleTitleInput}
@@ -68,12 +99,24 @@ export default class ArticleAdder extends Component {
     this.setState({ bodyInput: currentInput });
   };
 
+  handleTopicTitleInput = event => {
+    const currentInput = event.target.value;
+    this.setState({ newTopicTitle: currentInput });
+  };
+
+  handleTopicDescInput = event => {
+    const currentInput = event.target.value;
+    this.setState({ newTopicDesc: currentInput });
+  };
+
   handleSubmit = event => {
     event.preventDefault();
     const {
       titleInput: title,
       topicInput: topic,
-      bodyInput: body
+      bodyInput: body,
+      newTopicTitle,
+      newTopicDesc
     } = this.state;
     const {
       currentUser: { username },
@@ -81,13 +124,24 @@ export default class ArticleAdder extends Component {
       renderNewArticle
     } = this.props;
     const data = { title, body, username };
-    postArticleToTopic(data, topic)
-      .then(article => renderNewArticle(article))
-      .catch(console.log);
+    if (topic === "newTopic") {
+      const newTopicInput = { slug: newTopicTitle, description: newTopicDesc };
+      addTopic(newTopicInput)
+        .then(newTopic => postArticleToTopic(data, newTopic.slug))
+        .then(article => renderNewArticle(article))
+        .catch(console.log);
+    } else {
+      console.log(topic, "TOPIIIIIIC")
+      postArticleToTopic(data, topic)
+        .then(article => renderNewArticle(article))
+        .catch(console.log);
+    }
     this.setState({
       titleInput: "",
       topicInput: "",
-      bodyInput: ""
+      bodyInput: "",
+      newTopicTitle: "",
+      newTopicDesc: ""
     });
     toggleAddArticle();
   };

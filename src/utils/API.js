@@ -73,12 +73,11 @@ export const deleteComment = (article_id, comment_id) => {
 };
 
 export const postArticleToTopic = (body, topic) => {
-  console.log(body);
   return axios({
     method: "post",
     url: `${BASE_URL}/topics/${topic}/articles`,
     data: body
-  }).then(({ data: { article } }) => article);
+  }).then(({ data: { article } }) => article).catch(console.log)
 };
 
 export const deleteArticleById = article_id => {
@@ -88,6 +87,14 @@ export const deleteArticleById = article_id => {
 export const getTopics = () => {
   return axios.get(`${BASE_URL}/topics`).then(({ data: { topics } }) => topics);
 };
+
+export const addTopic = topic => {
+  return axios({
+    method: "post",
+    url: `${BASE_URL}/topics`,
+    data: topic
+  }).then(({ data: { topic } }) => topic).catch(err => console.log("ADDTOPIC CATCH>>", err))
+}
 
 export const postCommentToArticle = (comment, article) => {
   return axios({

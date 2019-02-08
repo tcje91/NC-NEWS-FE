@@ -10,7 +10,8 @@ export default class SortBar extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="SortForm">
+        <div>
           <label>Sort By:</label>
           <select
             id="sort_by"
@@ -25,6 +26,8 @@ export default class SortBar extends Component {
             <option value="title">Title</option>
             <option value="author">Author</option>
           </select>
+          </div>
+          <div>
           <label>Order:</label>
           <select
             id="order"
@@ -35,6 +38,8 @@ export default class SortBar extends Component {
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
+          </div>
+          <div>
           <label>Results per page:</label>
           <select
             id="limit"
@@ -46,6 +51,7 @@ export default class SortBar extends Component {
             <option value="10">10</option>
             <option value="20">20</option>
           </select>
+          </div>
           <button type="submit" className="SubmitButton">Sort</button>
         </form>
       </div>

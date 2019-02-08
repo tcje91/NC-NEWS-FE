@@ -17,6 +17,7 @@ export default class UserLogin extends Component {
             placeholder="USERNAME"
             onChange={this.handleChange}
             value={userInput}
+            className="UsernameInput"
           />
         </form>
         {userErr && <p className="SpaceCapsTitle warning">INVALID USERNAME</p>}
