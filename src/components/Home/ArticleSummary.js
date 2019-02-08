@@ -10,7 +10,7 @@ const ArticleSummary = ({ title, author, votes, created_at, id, topic, comment_c
       <p>{formatTimestamp(created_at).date}</p>
       {/* <p>Topic: {topic}</p> */}
       <p>Votes: {votes}</p>
-      <p>{comment_count} comments<span className="fancyTopic fancyFont">{topic}</span></p>
+      <p>{comment_count} {comment_count === "1" ? "comment" : "comments"}<span className="fancyTopic fancyFont">{topic}</span></p>
     </div>
   )
 }
