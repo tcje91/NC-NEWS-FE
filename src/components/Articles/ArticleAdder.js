@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { postArticleToTopic, getTopics, addTopic } from "../../utils/API";
-import TopicAdder from "./TopicAdder";
 
 export default class ArticleAdder extends Component {
   state = {
@@ -14,7 +13,7 @@ export default class ArticleAdder extends Component {
   render() {
     const { titleInput, bodyInput, topics, topicInput } = this.state;
     return (
-      <div>
+      <div className="ArticleAdder">
         <form onSubmit={this.handleSubmit}>
           <label>TOPIC:</label>
           <select

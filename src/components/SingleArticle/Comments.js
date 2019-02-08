@@ -20,17 +20,17 @@ export default class Comments extends Component {
     const { currentUser, article_id } = this.props;
     return (
       <>
-        {currentUser && <button className="AddButton" onClick={this.toggleAdding}>Add a comment</button>}
+        {currentUser && <button className="AddCommentButton" onClick={this.toggleAdding}>Add a comment</button>}
         <div className="CommentsContainer">
         {addingComment && <CommentAdder currentUser={currentUser} article_id={article_id} toggleAdding={this.toggleAdding} renderNewComment={this.renderNewComment}/>}
-          {comments.map(comment => (
+          {comments[0] ? comments.map(comment => (
             <Comment
               currentUser={currentUser}
               key={comment.comment_id}
               comment={comment}
               renderRemainingComments={this.renderRemainingComments}
             />
-          ))}
+          )) : <p className="noComments">No comments to display</p>}
         </div>
       </>
     );

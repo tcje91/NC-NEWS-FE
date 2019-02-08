@@ -28,7 +28,6 @@ export const getArticleById = id => {
   return axios
     .get(`${BASE_URL}/articles/${id}`)
     .then(({ data: { article } }) => article)
-    .catch(console.log);
 };
 
 export const getUsers = () => {

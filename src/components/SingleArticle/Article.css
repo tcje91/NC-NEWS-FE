@@ -21,7 +21,7 @@
   height: 60%;
 }
 
-.AddButton {
+.AddCommentButton {
   grid-area: AddButton;
   display: flex;
   justify-self: center;
@@ -79,4 +79,43 @@
 
 .CommentAdder {
   text-align: center;
+}
+
+.noComments {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .ArticleContainer {
+    display: grid;
+    grid-template: auto 1fr 2em 2em / 1fr;
+    width: 80%;
+    margin: auto;
+    grid-template-areas:
+      "postInfo"
+      "body"
+      "ShowButton"
+      "AddButton"
+      "commentsCont";
+  }
+
+  .ArticlePostInfo {
+    justify-self: center;
+    text-align: center;
+    padding: 0.5em;
+    margin: 1em;
+    grid-area: postInfo;
+    width: 50%;
+    height: fit-content;
+  }
+
+  .CommentsButton {
+    width: 60%;
+    height: 60%;
+  }
+
+  .AddCommentButton {
+    width: 60%;
+    height: 60%;
+  }
 }
