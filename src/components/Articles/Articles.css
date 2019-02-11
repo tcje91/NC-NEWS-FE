@@ -78,6 +78,10 @@ label {
   }
 
   .PageBar {
-    width: 80%;
+    width: 85%;
+  }
+
+  .SubmitButton {
+    align-self: flex-start;
   }
 }
