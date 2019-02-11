@@ -85,6 +85,14 @@
   text-align: center;
 }
 
+.fancyTopic {
+  float: right;
+  color: rgb(219, 69, 69);
+  font-size: 300%;
+  position: relative;
+  top: -20px;
+}
+
 @media screen and (max-width: 600px) {
   .ArticleContainer {
     display: grid;

@@ -45,4 +45,8 @@
   .recentArts {
     grid-row: 1
   }
+
+  .ArticleSummaryItem {
+    margin: 1em 0.4em;
+  }
 }

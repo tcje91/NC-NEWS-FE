@@ -40,6 +40,6 @@ export default class ArticleContainer extends Component {
       .then(article => {
         this.setState({ article });
       })
-      .catch(err => console.log(err, "ERROR HEEEERE") || navigate("/notfound"));
+      .catch(err => console.log(err, "ERROR HEEEERE") || navigate("/notfound", {replace: true}));
   }
 }

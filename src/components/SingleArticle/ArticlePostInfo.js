@@ -17,6 +17,8 @@ export default class ArticlePostInfo extends Component {
         <p>{date.date}</p>
         <p>{date.time}</p>
         <p>Votes: {article.votes + voteChange}</p>
+        {/* <p className="fancyTopic fancyFont">{article.topic}</p> */}
+        <br />
         {currentUser && currentUser.username !== article.author && (
           <>
             <button

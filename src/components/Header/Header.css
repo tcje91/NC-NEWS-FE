@@ -36,8 +36,8 @@
   width: 50%;
   justify-self: end;
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  align-content: flex-end;
+  flex-direction: column;
 }
 
 .SubmitButton {
@@ -45,6 +45,8 @@
   margin-bottom: 1em;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
+  width: 10em;
+  align-self: flex-end;
 }
 
 @media only screen and (max-width: 600px) {
@@ -69,4 +71,16 @@
   .UsernameInput {
     width: 80%;
   }
+
+  .LoggedIn {
+  width: 50%;
+  justify-self: start;
+  display: block;
+  align-content: flex-end;
+  flex-direction: row;
+}
+
+.SubmitButton {
+  justify-self: end;
+}
 }

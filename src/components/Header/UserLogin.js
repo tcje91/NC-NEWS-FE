@@ -19,6 +19,8 @@ export default class UserLogin extends Component {
             value={userInput}
             className="UsernameInput"
           />
+          <br />
+          <button className="SubmitButton" type="submit">LOG IN</button>
         </form>
         {userErr && <p className="SpaceCapsTitle warning">INVALID USERNAME</p>}
       </div>
