@@ -65,7 +65,7 @@ export default class SortBar extends Component {
           <button onClick={() => this.incPage(-1)} disabled={page < 2} className="responsiveButton">
             PREV PAGE
           </button>
-          <p>{page}</p>
+          <p className="page SpaceCapsTitle">{page}</p>
           <button onClick={() => this.incPage(1)} disabled={nextPageDisabled} className="responsiveButton">
             NEXT PAGE
           </button>

@@ -3,6 +3,7 @@
   grid-template: 1fr / 1fr 1fr;
   width: 100%;
   margin: auto;
+  padding-bottom: 2em;
 }
 
 .ArticleSummaryItem {
@@ -13,19 +14,19 @@
 
 .HomeContainer {
   width: 80%;
-    margin: auto;
-  }
-  
-  .WelcomeMessage {
-    text-align: center;
-  }
-  
+  margin: auto;
+}
+
+.WelcomeMessage {
+  text-align: center;
+}
+
 .fancyTopic {
   float: right;
   color: rgb(219, 69, 69);
   font-size: 300%;
   position: relative;
-  top: -20px;
+  top: -25px;
 }
 
 @media screen and (max-width: 600px) {
@@ -43,7 +44,7 @@
   }
 
   .recentArts {
-    grid-row: 1
+    grid-row: 1;
   }
 
   .ArticleSummaryItem {

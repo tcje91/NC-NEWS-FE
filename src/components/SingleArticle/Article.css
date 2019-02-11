@@ -9,6 +9,12 @@
   font-family: "Merriweather", serif;
   line-height: 1.6;
   grid-area: body;
+  z-index: 1;
+}
+
+.ArticleBody {
+  display: flex;
+  flex-direction: column;
 }
 
 .CommentsButton {
@@ -86,11 +92,16 @@
 }
 
 .fancyTopic {
-  float: right;
-  color: rgb(219, 69, 69);
   font-size: 300%;
-  position: relative;
-  top: -20px;
+  margin-bottom: 0.5em;
+  height: 0.5em;
+}
+
+.inBodyTopic {
+  z-index: 0;
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-top: 1.5em;
 }
 
 @media screen and (max-width: 600px) {
@@ -125,5 +136,9 @@
   .AddCommentButton {
     width: 60%;
     height: 60%;
+  }
+
+  .fancyTopic {
+    font-size: 200%;
   }
 }
