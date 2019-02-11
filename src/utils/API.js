@@ -9,10 +9,10 @@ export const getArticles = () => {
     .catch(console.log);
 };
 
-export const getSortedArticles = (sort_by, order, limit) => {
+export const getSortedArticles = (sort_by, order, limit, p) => {
   return axios
     .get(
-      `${BASE_URL}/articles?sort_by=${sort_by}&order=${order}&limit=${limit}`
+      `${BASE_URL}/articles?sort_by=${sort_by}&order=${order}&limit=${limit}&p=${p}`
     )
     .then(({ data: { articles } }) => articles)
     .catch(console.log);

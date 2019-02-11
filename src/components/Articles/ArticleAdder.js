@@ -18,8 +18,9 @@ export default class ArticleAdder extends Component {
           <label>TOPIC:</label>
           <select
             value={this.state.topicInput}
-            onChange={this.handleTopicInput}
+            onChange={this.handleInput}
             className="customSelect"
+            id="topicInput"
           >
             <option value="default" disabled>
               Topic
@@ -40,34 +41,38 @@ export default class ArticleAdder extends Component {
             <div>
               <label>NEW TOPIC:</label>
               <input
-                onChange={this.handleTopicTitleInput}
+                onChange={this.handleInput}
                 placeholder="Topic title"
+                id="newTopicTitle"
                 required
               />
               <input
-                onChange={this.handleTopicDescInput}
+                onChange={this.handleInput}
                 className="DescInput"
                 placeholder="Topic description"
+                id="newTopicDesc"
                 required
               />
             </div>
           )}
           <br />
           <input
-            onChange={this.handleTitleInput}
+            onChange={this.handleInput}
             type="text"
             placeholder="Title"
             value={titleInput}
+            id="titleInput"
             required
             className="TitleInput"
           />
           <br />
           <textarea
-            onChange={this.handleBodyInput}
+            onChange={this.handleInput}
             className="ArticleInput"
             type="text"
             placeholder="Article"
             value={bodyInput}
+            id="bodyInput"
             required
           />
           <br />
@@ -83,30 +88,10 @@ export default class ArticleAdder extends Component {
     });
   };
 
-  handleTitleInput = event => {
-    const currentInput = event.target.value;
-    this.setState({ titleInput: currentInput });
-  };
-
-  handleTopicInput = event => {
-    const currentInput = event.target.value;
-    this.setState({ topicInput: currentInput });
-  };
-
-  handleBodyInput = event => {
-    const currentInput = event.target.value;
-    this.setState({ bodyInput: currentInput });
-  };
-
-  handleTopicTitleInput = event => {
-    const currentInput = event.target.value;
-    this.setState({ newTopicTitle: currentInput });
-  };
-
-  handleTopicDescInput = event => {
-    const currentInput = event.target.value;
-    this.setState({ newTopicDesc: currentInput });
-  };
+  handleInput = event => {
+    const { value, id } = event.target;
+    this.setState({ [id]: value })
+  }
 
   handleSubmit = event => {
     event.preventDefault();

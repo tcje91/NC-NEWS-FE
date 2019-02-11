@@ -39,6 +39,13 @@ label {
   align-items: center;
 }
 
+.PageBar {
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  margin: auto;
+}
+
 @media screen and (max-width: 600px) {
   .SortForm {
     display: flex;

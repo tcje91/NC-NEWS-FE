@@ -15,9 +15,9 @@ export default class UsersContainer extends Component {
         <h1>USERS</h1>
         <div className="UsersContainer">
           <br />
-          {users.map(user => {
+          {users && users[0] ? users.map(user => {
             return <User user={user} key={user.username} />;
-          })}
+          }) : <p className="Loading">Loading...</p>}
         </div>
       </div>
     );

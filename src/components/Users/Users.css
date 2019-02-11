@@ -18,3 +18,7 @@
 .UserImgSml {
   width: 80%;
 }
+
+.Loading {
+  justify-self: flex-start;
+}
