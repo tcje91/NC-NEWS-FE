@@ -33,6 +33,10 @@ label {
   padding-bottom: 0.3em;
 }
 
+#addArticleButton {
+  width: 25em;
+}
+
 .SortForm {
   display: flex;
   flex-direction: row;
@@ -44,6 +48,7 @@ label {
   justify-content: space-around;
   width: 20%;
   margin: auto;
+  align-items: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -62,5 +67,13 @@ label {
 
   #addArticleButton {
     width: fit-content;
+  }
+
+  .responsiveButton {
+    width: 10em;
+  }
+
+  .PageBar {
+    width: 80%;
   }
 }

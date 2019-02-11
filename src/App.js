@@ -29,12 +29,20 @@ class App extends Component {
     );
   }
 
+  componentDidMount = () => {
+    const currentUser = sessionStorage.getItem('currentUser')
+    if (currentUser) this.setUser(JSON.parse(currentUser))
+  }
+
+
   setUser = user => {
     this.setState({ currentUser: user });
+    sessionStorage.setItem('currentUser', JSON.stringify(user))
   };
 
   logOut = () => {
     this.setState({ currentUser: null })
+    sessionStorage.setItem('currentUser', null)
   }
 }
 
