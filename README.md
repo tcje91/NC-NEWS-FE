@@ -6,7 +6,7 @@
 
 The project can be found hosted here: https://gallant-allen-1318fc.netlify.com/
 
-In order to access additional features such as posting articles and comments, and voting, users are required to log in using one of the pre-existing usernames from the Users page. For your convenience, those usernames are as follows:
+In order to access additional features such as posting articles and comments, and voting, users are required to log in using one of the pre-existing usernames from the Users page. For your convenience, those usernames shown below:
 
 * tickle122
 * grumpy19
