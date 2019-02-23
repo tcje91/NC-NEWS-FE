@@ -15,7 +15,7 @@ In order to access additional features such as posting articles and comments, an
 * weegembump
 * jessjelly
 
-The back end API used for this project can be accessed here: https://nc-news-tcje.herokuapp.com/api/  
+The back end API used for this project can be accessed here: https://nc-news-tcje.herokuapp.com/api/   
 The Github repository for the back end of this project: https://github.com/northcoders/BE2-NC-Knews
 
 ## Getting Started
