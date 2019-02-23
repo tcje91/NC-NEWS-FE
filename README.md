@@ -6,7 +6,14 @@
 
 The project can be found hosted here: https://gallant-allen-1318fc.netlify.com/
 
-In order to access additional features such as posting articles and comments, and voting, users are required to log in using one of the pre-existing users from the Users page.
+In order to access additional features such as posting articles and comments, and voting, users are required to log in using one of the pre-existing usernames from the Users page. For your convenience, those usernames are as follows:
+
+* tickle122
+* grumpy19
+* happyamy2016
+* cooljmessy
+* weegembump
+* jessjelly
 
 The back end API used for this project can be accessed here: https://nc-news-tcje.herokuapp.com/api/  
 The Github repository for the back end of this project: https://github.com/northcoders/BE2-NC-Knews
