@@ -6,7 +6,7 @@
 
 The project can be found hosted here: https://gallant-allen-1318fc.netlify.com/
 
-In order to access additional features such as posting articles and comments, and voting, users are required to log in using one of the pre-existing usernames from the Users page. For your convenience, those usernames shown below:
+In order to access additional features such as posting articles and comments, and voting, users are required to log in using one of the pre-existing usernames from the Users page. For your convenience, those usernames are shown below:
 
 * tickle122
 * grumpy19
@@ -63,7 +63,11 @@ Once these are installed, you can begin experimenting.
 
 The majority of the screens, components and styling are locating in the ```src/components/``` directory. These components and their associated stylings are roughly grouped by the screens in which they appear, though some components can be found on multiple screens.
 
-To run a local development server to view the effect of your changes, enter into your terminal the script ```npm start```. The app, along with any changes, should open in a web browser tab. You can continue to make changes and, provided there are no errors in your code and the development environment is still running, they will be immediately visible when you save them.
+To run a local development environment to view the effect of your changes, enter into your terminal the script: 
+```
+npm start
+```
+The app, along with any changes, should open in a web browser tab. You can continue to make changes and, provided there are no errors in your code and the development environment is still running, they will be immediately visible when you save them.
 
 If you wish to exit the development environment, enter **Ctrl+C**/**Cmd+C** with the terminal highlighted.
 
