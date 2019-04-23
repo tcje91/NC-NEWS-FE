@@ -10,11 +10,11 @@
   line-height: 1.6;
   grid-area: body;
   z-index: 1;
+  margin-bottom: 4rem;
 }
 
 .ArticleBody {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .CommentsButton {
@@ -98,10 +98,9 @@
 }
 
 .inBodyTopic {
-  z-index: 0;
-  align-self: flex-end;
-  justify-self: flex-end;
-  margin-top: 1.5em;
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.9rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -140,5 +139,13 @@
 
   .fancyTopic {
     font-size: 200%;
+  }
+
+  .BodyText {
+    margin-bottom: 1.5rem;
+  }
+
+  .inBodyTopic {
+    bottom: 0.4rem;
   }
 }
