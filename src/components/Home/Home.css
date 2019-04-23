@@ -7,6 +7,7 @@
 }
 
 .ArticleSummaryItem {
+  position: relative;
   display: block;
   margin: 1em;
   padding: 0.5em;
@@ -32,11 +33,11 @@
 }
 
 .ArticleSummaryItem .fancyTopic {
-  float: right;
+  position: absolute;
+  bottom: 0.8rem;
+  right: 0.5rem;
   color: rgb(219, 69, 69);
   font-size: 300%;
-  position: relative;
-  top: -25px;
 }
 
 @media screen and (max-width: 600px) {
@@ -45,12 +46,10 @@
     grid-template: 1fr 1fr / 1fr;
   }
 
-  .fancyTopic {
-    float: right;
-    color: rgb(219, 69, 69);
-    font-size: 200%;
-    position: relative;
-    top: -5px;
+  .ArticleSummaryItem .fancyTopic {
+    font-size: 250%;
+    bottom: 0.5rem;
+    right: 0.3rem;
   }
 
   .recentArts {
