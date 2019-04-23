@@ -40,6 +40,12 @@
   font-size: 300%;
 }
 
+@media screen and (max-width: 1800px) {
+  .HomeContainer .DisplayContainer .ArticleSummaryItem {
+    min-height: 130px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .DisplayContainer {
     display: grid;
@@ -58,5 +64,11 @@
 
   .ArticleSummaryItem {
     margin: 1em 0.4em;
+    min-height: 95px;
+  }
+
+  .HomeContainer .DisplayContainer .ArticleSummaryItem {
+    min-height: 95px;
   }
 }
+
