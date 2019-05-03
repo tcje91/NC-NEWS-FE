@@ -2,7 +2,7 @@
 
 ## Description
 
-[NC News](https://gallant-allen-1318fc.netlify.com/) is a responsive web abb project built in React that serves as a news aggregation and commentary board.
+[NC News](https://gallant-allen-1318fc.netlify.com/) is a responsive web app built in React that serves as a news aggregation and commentary board.
 
 The project can be found hosted here: https://gallant-allen-1318fc.netlify.com/
 
